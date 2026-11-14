@@ -1,0 +1,525 @@
+# ============================================================
+#  星空リバーシ ステージ定義
+# ============================================================
+#  ・1面 = 8行 x 8文字。B = 新月(あなた)、W = 満月(相手)、. = 空き。
+#  ・上から順に 1面、2面、3面…になります。面の数は決まっていません。
+#    ステージ選択の月の数は、ここに書いた面の数で決まります。
+#  ・面と面の間に空行を入れても入れなくても構いません(64文字ごとに次の面になります)。
+#  ・# から後ろ(と // から後ろ)はコメントです。
+#  ・遊ぶ順番は、書いた順番です。前の面をクリアすると次の面が現れます。
+#  ・ここに書いた面のあと(29 面の次から(30 面から))は、Pool.txt の面から抽選する「ランダム面」になります。30 面以降の手作りの面も、抽選のもとに加わります。
+#  ・5 の倍数の面(5, 10, 15 …)は「LUNATIC」。月が赤くなる、難しい面です。そこに難しい面を置いてください。
+#    難しさは、相手がどう打っても勝てる最短の手数と、勝てる手の少なさで決めています。
+#
+#  ゲームの決まり:
+#   - あなたが新月を置くと、挟んだ満月が新月になります(オセロと同じ)。
+#   - そのあと相手(満月)も必ず打ちます。相手は、打てる所の中からランダムに選びます。
+#     そのため、相手がどこに打っても必ず解ける面だけを入れてください。
+#   - あなたに打てる所が無いときは、相手がもう一度打ちます。
+#   - 全てのマスが新月になればクリアです。
+#
+#  解けるかどうかは、再生中に右上の歯車 → 「ステージを検証」で確かめられます
+#  (結果は Console に出ます)。
+#
+#  書き方の例(使うときは行頭の # を取ってください):
+#
+#  BBBBBBBB
+#  BBBBBBBB
+#  BBBBBBBB
+#  BBBWBBBB
+#  BBB.WBBB
+#  BBBBBBBB
+#  BBBBBBBB
+#  BBBBBBBB
+# ============================================================
+
+# 【最初の面】
+# --- 1面: チュートリアル1: すべての満月を消す ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+.WWWBBBB
+
+# --- 2面: チュートリアル2: 一つでも満月を残してはいけない ---
+BBBBBBBB
+BWBBBBBB
+BBWBBBBB
+BBBWBBBB
+BBBBWBBB
+BBBBBWBB
+BBBBBBWW
+BBBBBWW.
+
+# --- 3面: チュートリアル3: 一つでも余白を残してはいけない ---
+BW...WBB
+BBBWBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 4面: 新4: 相手が月を置く ---
+BBBBBBBB
+BBBBBBWB
+BBBBBWBB
+BBBBWBBB
+BBBWBBBB
+BBBBBBBB
+B.BBBBBB
+.BBBBBW.
+
+# --- 5面: 旧4面: 最初 [LUNATIC] ---
+BBBBB..B
+BBBBWWBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBWW.
+
+# --- 6面: 写真A ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+WWBBBBBB
+..BBBBBB
+
+# --- 7面: 新6 ---
+.WWBBBBB
+.WBBBBBB
+.WBBBBBB
+BWBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 8面: 新7 ---
+.WWBBBBB
+.WBBBBBB
+.WBBBBBB
+.WBBBBBB
+BWWBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 9面: 写真B ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+WBBBBBBB
+WWWBBBBB
+...BBBBB
+
+# --- 10面: 写真C [LUNATIC] ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+.WWWBBBB
+....BBBB
+
+# --- 11面: 写真7 ---
+BWWWWWW.
+BBWWBBWW
+BW..BWWW
+BWWWWBBW
+BBWWWBBW
+BBWBBWBW
+BBBBBBWW
+BBBBBBBB
+
+# --- 12面: 写真6 ---
+BBW..BBB
+BBB..BBB
+BBBWBBBB
+BBBWWBBB
+BBBWWBBB
+BBBWWBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 13面: スクショ1 ---
+..BBWWBB
+WWBBBBBB
+WBWBBBBB
+BBB.BBBB
+BBBBBBBB
+B.WWWBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 14面: スクショ4 ---
+BBBBBBBB
+BBBBWW.B
+BBBBBBWW
+BBBBBBW.
+BBBBBB..
+BBBBBBBB
+BBBBBBBW
+BBBBBBBB
+
+# --- 15面: スクショ11 [LUNATIC] ---
+BBBBBW.B
+BBBBWWWB
+BBBWBWWB
+BBB.BW.B
+BBBBBWWB
+B.WBWBWB
+BBBBWBB.
+BBBB.BBB
+
+# --- 16面: スクショ3 ---
+BBBBBBBB
+WBBBBBBB
+.WB.W.WB
+BBBWBBBB
+BB.BBBB.
+BBBBBBWW
+BBBBBBBW
+BBBBBBBB
+
+# --- 17面: スクショ8 ---
+BBBBBBBB
+BBWB.WBB
+B..BWWBB
+B..BWBBB
+BBWBBBBB
+BBBWWBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 18面: スクショ10 ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+B.WWBBBB
+B.B.WB..
+BBBWBBWW
+BBBBBBBB
+
+# --- 19面: 写真4 ---
+BBBBBW..
+BBBBBW.W
+BBBBB..W
+BBBBBWWW
+BBBBBBBB
+BBBBBBBB
+BBBBBBWB
+BBBBBBBB
+
+# --- 20面: スクショ5 [LUNATIC] ---
+BBWWWWW.
+BBBBBB.W
+BBBBBBBW
+BBBBBWWW
+BBBWWB.B
+BWW.WWWB
+BWW...WB
+BBB.BBBB
+
+# --- 21面: スクショ12 ---
+BBBBBBBB
+BBBBB.BB
+BBBBWBBB
+BB..BBBB
+BBWBBBBB
+.WWWWBBB
+BBB.BBBB
+BBBBBBBB
+
+# --- 22面: 写真2 ---
+BBBBB...
+BBBBBWW.
+BBBBBWW.
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 23面: スクショ2 ---
+.BBBBBBB
+WWBBBBBB
+.BBBBBBB
+.WBWBBBB
+BBWWBBBB
+BBBWBBBB
+BBW.WBBB
+BBB.BBBB
+
+# --- 24面: スクショ6 ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+B.WBBBBB
+BBWB.WWB
+B.BBBB..
+BW..WBBB
+
+# --- 25面: 追加2 [LUNATIC] ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBWWWW..
+BBW..W.B
+BBBB....
+BBBBBBBB
+
+# --- 26面: スクショ9 ---
+BBBBBBBB
+BBBB.BWB
+BBBB.W.B
+BBBBWWBB
+BBBWWBBB
+BB..WBWB
+BWWW.B.B
+BBBBBBBB
+
+# --- 27面: 写真5 ---
+BBBBB...
+BBBBB...
+BBBBBWWW
+BBBBBWWW
+BBBBBWWW
+BBBBBWWW
+BBBBBBBB
+BBBBBBBB
+
+# --- 28面: 追加5 ---
+BBBBBBBB
+BBBBBBBB
+BBBB.B.B
+BBBBWB.B
+BBBBB.B.
+BBBBBBBW
+BBBBBBBB
+BBBBW.WB
+
+# --- 29面: 追加4 ---
+.WWBBBBB
+.BW.BBBB
+BB.BBBBB
+BB..BBBB
+B.WBBBBB
+B.BBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 30面: 追加7 [LUNATIC] ---
+BBBBBBBB
+BBBBBBBB
+BWBBWBBB
+BB..BBBB
+B.B.WBBB
+BW.BW.BB
+B.W.WWBB
+BBW.BBBB
+
+# --- 31面: 追加6 ---
+BBBBBBW.
+BBBBB.W.
+BBBBBW..
+BBBBBB..
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 32面: 追加1 ---
+BBBBBBBB
+.WB.W.WB
+.W.W.W.B
+.W.BWWWB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 33面: 追加3 ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+.WWBBBBB
+.W.BBBBB
+...BBBBB
+...BBBBB
+
+# --- 34面: 追加9 ---
+BBBBBBBB
+BBBBBBBB
+BBBWW.W.
+BBB.BWB.
+BBBB.BBW
+BBBBB..W
+BBBBBBBB
+BBBBBBBB
+
+# --- 35面: 写真8 [LUNATIC] ---
+BBBBBB..
+BBBBBBB.
+BBBBBW..
+BBBBBWW.
+BBBBBWW.
+BBBBBWW.
+BBBWWWW.
+BB......
+
+# --- 36面: 追加8 ---
+BW.WBBBB
+BBBB.BBB
+BBBW.BBB
+BBBB.BBB
+BB.BWBBB
+B..B.BBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 37面: 追加10 ---
+BBBBBBBB
+B..BBWBB
+BBB.B.BB
+B.B..BBB
+B.W.BWBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 38面: 写真3 ---
+.......B
+WW....BB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 39面: 追加11 ---
+BB.BBBBB
+W..BBBBB
+WW.BBBBB
+.BWBBBBB
+.BBBBBBB
+..BBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 40面: 追加12 [LUNATIC] ---
+BBWW..BB
+BB..W.BB
+BWW.W.WB
+BBBBBWBB
+BBW.BWBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 41面: 追加13 ---
+BBBBBBBB
+BBBBW.BB
+BBBBW..B
+BBB..B.B
+BBBBWWWB
+BBB.WBWB
+BBBBBBWB
+BBBBBBBB
+
+# --- 42面: 追加14 ---
+BBBB.W.B
+BBBBWWWB
+BBBBWWWB
+BBBB.W.B
+BBBB..WB
+BBBB.W.B
+BBBBWW.B
+BBBBBBBB
+
+# --- 43面: 追加15 ---
+BBBBBBBB
+B...WBBB
+BB..WBBB
+BW...BBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 44面: 追加16 ---
+BBBBBBBB
+BB.BBW.B
+BBBB.BWB
+BBB..B..
+BBWBBBW.
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 45面: 追加17 [LUNATIC] ---
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+.BWB..BB
+WBBW..BB
+.WB.WWBB
+.BW.WBBB
+
+# --- 46面: 追加18 ---
+B.BW.BBB
+BWB.BBBB
+BBB.WBBB
+B.WWWBBB
+BB.WBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 47面: 追加19 ---
+BBBBBBBB
+B.W.BBBB
+WW..BBBB
+.WWBBBBB
+.W..BBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+
+# --- 48面: 追加20 ---
+BBB.BBBB
+BBBWBBBB
+BBBW..BB
+BBB...BB
+BBBWW.BB
+BBBWBBBB
+BBB..WBB
+BBBBBBBB
+
+# --- 49面: 追加21 ---
+BBBBBBBB
+BBBBW.WB
+BBBBW.BB
+BBBBBWW.
+BBBBBWWB
+BBBBWWBW
+BBBB.W.W
+BBBB..W.
